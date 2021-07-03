@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}
+    Details Page
+{% endblock %}
+{% block content %}
+<h1 align="center">{{ book_name }}</h1>
+<h2 align="center">{{ description }}</h2>
+<br>
+<div class="figure-regions">
+    <div class="row">
+        <div class="column" style="padding:5px"></div>
+        <div class="column" style="padding:5px"></div>
+        <div class="column" style="padding:5px">
+            <figure class="figure">
+                <figcaption class="figure-caption text-center"><h4>Reviews - WordCloud</h4></figcaption>
+                <img src="data:image/png;base64,{{ review_wordcloud }}" class="border border-primary figure-img img-fluid rounded" alt="...">
+            </figure>
+        </div>
+        <div class="column" style="padding:5px">
+            <figure class="figure">
+                <figcaption class="figure-caption text-center"><h4>Profanity - WordCloud</h4></figcaption>
+                <img src="data:image/png;base64,{{ profane_wordcloud }}" class="border border-primary figure-img img-fluid rounded" alt="...">
+            </figure>
+        </div>
+    </div>
+</div>
+{% endblock %}
