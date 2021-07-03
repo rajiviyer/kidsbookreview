@@ -198,12 +198,17 @@ def details_page(book_name):
         profane_review_set = " ".join(profane_words)
         wordCloudReviewImg = bookData.getWCImage(lemma_review_set)
         wordCloudProfanityImg = bookData.getWCImage(profane_review_set)
+        if wordCloudReviewImg:
+            wordCloudReviewImg = wordCloudReviewImg.decode('utf-8')
+
+        if wordCloudProfanityImg:
+            wordCloudProfanityImg = wordCloudProfanityImg.decode('utf-8')
     else:
         wordCloudReviewImg = None
         wordCloudProfanityImg = None
 
 #    full_filename = os.path.join(app.config['IMG_DIR'], book_name.lower().replace(" ", "_")+".png")
     return render_template('details.html', book_name=book_name, description=description,
-                           review_wordcloud=wordCloudReviewImg.decode('utf-8'),
-                           profane_wordcloud=wordCloudProfanityImg.decode('utf-8')
+                           review_wordcloud=wordCloudReviewImg,
+                           profane_wordcloud=wordCloudProfanityImg
                            )
