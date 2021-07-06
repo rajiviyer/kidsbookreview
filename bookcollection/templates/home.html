@@ -47,7 +47,7 @@
                     <tbody>
                       {% for book in books.items %}
                         <tr scope="row" class="bg-info">
-                            <td><a href="{{ url_for('details_page', book_name=book.title) }}" style="color:#fad7a0;">{{ book.title }}</a></td>
+                            <td><a href="{{ url_for('details_page', book_name=book.title, author_name=book.author) }}" style="color:#fad7a0;">{{ book.title }}</a></td>
                             <td align="center">{{ book.rating }}</td>
                             <td align="center">{{ book.age }}+</td>
                             <td align="center">{{ book.author }}</td>
