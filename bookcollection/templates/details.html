@@ -16,12 +16,38 @@
                 <img src="data:image/png;base64,{{ review_wordcloud }}" class="border border-primary figure-img img-fluid rounded" alt="...">
             </figure>
         </div>
+        {% if profane_wordcloud %}
         <div class="column" style="padding:5px">
             <figure class="figure">
                 <figcaption class="figure-caption text-center"><h4>Mature Content in Reviews</h4></figcaption>
                 <img src="data:image/png;base64,{{ profane_wordcloud }}" class="border border-primary figure-img img-fluid rounded img-responsive", alt="Does not Exist">
             </figure>
         </div>
+        {% endif %}
     </div>
+    {% if quote_wordcloud %}
+    <div class="row">
+        <div class="column" style="padding:5px"></div>
+        <div class="column" style="padding:5px"></div>
+        <div class="column overlay" style="padding:5px">
+            <figure class="figure">
+                <figcaption class="figure-caption text-center"><h4>Quotes Keywords (Difficulty Score: {{ grade_level }})</h4></figcaption>
+                <div class="view overlay">
+                    <img src="data:image/png;base64,{{ quote_wordcloud }}" class="border border-primary figure-img img-fluid rounded" alt="...">
+                    <!--div class="mask flex-center rgba-blue-light">
+                        <p class="white-text">Light overlay</p>
+                    </div-->
+                </div>
+            </figure>
+        </div>
+    </div>
+    {% endif %}
+    <!--Zoom effect-->
+    <!--card class="view overlay zoom">
+        <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/6-col/img%20(131).jpg" class="img-fluid " alt="smaple image">
+        <div class="mask flex-center">
+            <p class="white-text">Zoom effect</p>
+        </div>
+    </card-->
 </div>
 {% endblock %}
